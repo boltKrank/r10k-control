@@ -1,0 +1,9 @@
+---
+sudo: required
+before_install:
+  # get the full git repo or r10k breaks (travis only gives last 50 commits)
+  - git fetch --unshallow
+language: ruby
+script: "bundle install && make"
+notifications:
+  email: false
